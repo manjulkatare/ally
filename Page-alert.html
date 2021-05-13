@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Header</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function() {
+  var myCnt = $("#voteCount").text();
+	var myCount = parseInt(myCnt);
+	$('#upvote').click(function() {
+		myCount = myCount + 1;
+		$('#voteCount').text('The current votes are ' + myCount);
+	});
+	$('#downvote').click(function() {
+		myCount = myCount - 1;
+		$('#voteCount').text('The current votes are ' + myCount);
+	});
+});
+</script>
+</head>
+<body>
+<div class="container" role="main">
+  <h1>Using [role=alert] to Identify Errors</h1>
+  <p id="errors" role="alert" aria-atomic="true"><span id="voteCount" role="alert">0</span></p>
+  <input type="submit" name="button" id="upvote" value="Upvote"/>
+  <input type="submit" name="button" id="downvote" value="Downvote"/>
+</body>
+</html>

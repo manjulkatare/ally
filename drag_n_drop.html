@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Drag and Drop</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<style>
+div#dragdrop {
+    margin: 50px auto 0 auto;
+    width: 500px;
+}
+ul
+{
+	position: relative;
+	width: 11em;
+	list-style-type: none;
+	margin: 0;
+	padding: 0.5em;
+	background: #000;
+	color: #fff;
+	margin-bottom: 1em;
+}
+
+ul.instructions
+{
+	width: auto;
+	list-style-type: disc;
+	margin-left: 0;
+	padding: 0.5em;
+	background: #fff;
+	color: #000;
+	margin-bottom: 1em;
+}
+
+ul#popup
+{
+	position: absolute;
+	width: 10em;
+	padding: 0.3em;
+	background: #ccc;
+	color: #000;
+	border: 1px solid #000;
+	top: 1em;
+	left: 1em;
+	cursor: default;
+	z-index: 40;
+}
+
+ul#popup li
+{
+	text-align: left;
+	margin: 0.3em 0;
+	padding: 0 0.2em;
+}
+
+ul#popup li.focus, ul#popup li.hover
+{
+	background: #00c;
+	color: #fff;
+}
+
+ul.highlight
+{
+	background: #c00;
+	color: #000;
+}
+
+li.draggable
+{
+	cursor: move;
+}
+
+ul li.hover, ul li.focused
+{
+	background: #fc0;
+}
+
+li.draggable, li.empty
+{
+	position: relative;
+	border: 1px solid #666;
+	padding: 0.5em;
+	width: 10em;
+	text-align: center;
+	color: #000;
+	background: #fff;
+}
+div.additionalInfo {
+    margin: 50px auto 0 auto;
+    width: 500px;	
+}
+</style>
+
+<header class="navbar-inverse" role="banner">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    	<a class="navbar-brand" aria-label="Branding Logo" href="#">Logo</a>
+    </div>
+  </div>
+</header>
+    <h1>Drag and Drop</h1>
+    <div id="dragdrop" role="application">
+        <h2 id="Favh">Tasks in Progress</h2>
+        <ul id="Fav" aria-labelledby="Favh" role="list">
+            <li class="draggable" tabindex="0" aria-grabbed="false" aria-haspopup="true" role="listitem"
+                style="top: 0px; left: 0px;">Task 1</li>
+            <li class="draggable" tabindex="0" aria-grabbed="false" aria-haspopup="true" role="listitem"
+                style="top: 0px; left: 0px;">Task 2</li>
+            <li class="draggable" tabindex="0" aria-grabbed="false" aria-haspopup="true" role="listitem"
+                style="top: 0px; left: 0px;">Task 3</li>
+            <li class="draggable" tabindex="0" aria-grabbed="false" aria-haspopup="true" role="listitem"
+                style="top: 0px; left: 0px;">Task 4</li>
+            <li class="draggable" tabindex="0" aria-grabbed="false" aria-haspopup="true" role="listitem"
+                style="top: 0px; left: 0px;">Task 5</li>
+            <li class="draggable" tabindex="0" aria-grabbed="false" aria-haspopup="true" role="listitem"
+                style="top: 0px; left: 0px;">Task 6</li>
+        </ul>
+        <h2 id="Tolh">Tasks in Testing</h2>
+        <ul id="Tol" aria-labelledby="Tolh" role="list">
+            <li class="empty">None</li>
+        </ul>
+        <h2 id="Rejh">Tasks Completed</h2>
+        <ul id="Rej" aria-labelledby="Rejh" role="list">
+            <li class="empty">None</li>
+        </ul>
+    </div>
+    <hr />
+    <div class="additionalInfo" role="complementary">
+    	<p>WAI-ARIA provides two properties to help make drag and drop accessible to users of assistive technologies:<p>
+	<p>aria-grabbed(true / false)
+	<!-- <pre>Example: <li aria-grabbed="true"></pre> -->
+	<p>aria-dropeffect (copy / move / reference / execute / popup / none</p>
+	<!-- <pre><ul aria-dropeffect="move"></pre> -->
+    </div>
+<script type="text/javascript" src="https://dev.opera.com/articles/accessible-drag-and-drop/drag-and-drop.js"></script>				
+</body>
+</html>
+
+<!-- https://dev.opera.com/articles/accessible-drag-and-drop/example.html#kbdinstructions -->

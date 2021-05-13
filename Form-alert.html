@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Header</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(e) {
+	$('#myForm').submit(function() {
+		$('#errors').html('');
+		if ($('#first').val() === '') {
+			$('#errors').append("<div class='alert alert-info alert-dismissible'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><strong>Danger!</strong>&nbsp; Please Fill in First Name</div>");
+		}
+		if ($('#last').val() === '') {
+			$('#errors').append("<div class='alert alert-warning alert-dismissible'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><strong>Warning!</strong>&nbsp; Please Fill in Last Name</div>");
+		} 
+		if ($('#email').val() === '') {
+			$('#errors').append("<div class='alert alert-danger alert-dismissible'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><strong>Danger!</strong>&nbsp; Please Fill in Email</div>");
+		} 
+		return false;
+	});
+});
+</script>
+</head>
+<body>
+<div class="container" role="main">
+<h1>Using [role=alert] to Identify Errors</h1>
+<hr />
+<form name="myForm" id="myForm" method="post" action="">
+  <div id="errors" role="alert" aria-atomic="true"></div>
+  <p>
+    <label for="first">First Name (required)</label><br>
+    <input type="text" name="first" id="first">
+  </p>
+  <p>
+    <label for="last">Last Name (required)</label><br>
+    <input type="text" name="last" id="last">
+  </p>
+  <p>
+    <label for="email">Email (required)</label><br>
+    <input type="text" name="email" id="email">
+  </p>
+  <p>
+    <input type="submit" name="button" id="signup" value="signup">
+  </p>
+</form>
+	
+<hr />
+	
+<p><b>aria-atomic="true"</b>, ensures that each time the live region is updated, the entirety of the content is announced in full.</p>
+<p><b>role="alert"</b>, The purpose of this technique is to notify Assistive Technologies (AT) when an input error occurs.</p>
+
+</div>
+</body>
+</html>

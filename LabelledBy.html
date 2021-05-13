@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Using ARIA Labelled By</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<style>
+    br { height: 10px;}
+</style>
+
+<header class="navbar-inverse" role="banner">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    	<a class="navbar-brand" aria-label="Branding Logo" href="#">Logo</a>
+    </div>
+  </div>
+</header>
+<div class="container" role="main">
+  <h1>Using ARIA Labelled By </h1>
+  <hr/>
+  <input name="searchtxt" type="text" aria-labelledby="searchbtn">
+  <input name="searchbtn" id="searchbtn" type="submit" value="Search Case Record">
+  <br/><br/>
+  <p>An above example of aria-labelledby used on a simple text field to provide a label in a situation where there is no text available for a dedicated label but there is other text on the page that can be used to accurately label the control.</p>
+  <hr/>
+	
+ <label id="l1" for="f3">Notify me</label>
+ <select name="amt" id="f3" aria-labelledby="l1 f3 l2">
+  <option value="1">1</option>
+  <option value="2">2</option>
+ </select>
+ <span id="l2" tabindex="-1">days in advance</span>
+ <br/><br/>
+ <p>In an example of aria-labelledby with multiple references uses the label element. For additional detail on concatenating multiple sources of information into a label with aria-labelledby</p>
+</div>					
+</body>
+</html>

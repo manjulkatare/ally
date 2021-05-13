@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>The Focus Trap</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<style>
+    .dialog {
+        display: none;
+    }
+
+    .dialog.opened {
+        display: block;
+    }
+
+    .dialog_window {
+        display: inline-block;
+        position: fixed; 
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        border: 2px solid #000;
+        padding: 18px;
+        z-index: 101;
+    }
+    .dialog_mask {
+        position: fixed;
+        top:0;
+        left:0;
+        height: 100%;
+        width: 100%;
+        background: #000;
+        opacity: 0.6;
+        overflow: hidden;
+        z-index: 100;
+    }
+    div.dialog_window > a.closeX {
+        position: absolute;
+        top: 5px;
+        right: 8px;
+        width: 20px;
+        height: 20px;
+        display: block;
+        background: black;
+        text-align: center;
+        color: white;
+        border-radius: 5px;
+    }
+    input {margin-bottom: 5px;}
+</style>
+    <button class="dummy-button">Dummy Button</button>
+    <button class="product-card-btn">Click to see Modal Box</button>
+    <!-- This is my dialog window -->
+    <div class="dialog" role="dialog" aria-labelledby="dialog_title">
+        <div class="dialog_window">
+            <a class="closeX" href="#">X</a>
+            <div>
+                <h2 id="dialog_title">Registration</h2>
+            </div>
+            <div>
+                <p>Plese fill out this form:</p>
+                <input type="text" placeholder="Your Name"><br/>
+                <input type="text" placeholder="Your Phone Number"><br/>
+                <input type="text" placeholder="Your Address"><br/>
+                <button id="cnl">Cancel</button>
+                <button id="sbmt">Submit</button>
+            </div>
+        </div>
+        <div class="dialog_mask"></div>
+    </div>
+
+    <script>
+        const focusableElements ='button, [href], input, select, textarea';
+        const dialog = document.querySelector('.dialog');
+        const firstFocusableElement = dialog.querySelectorAll(focusableElements)[0];
+        const focusableContent = dialog.querySelectorAll(focusableElements);
+        const lastFocusableElement = focusableContent[focusableContent.length - 1];
+        const dialogMask = document.querySelector('.dialog_mask');
+        
+        const modelOpener = document.querySelector('.product-card-btn');
+        const modelCloser = document.querySelector('.closeX');
+
+
+        function openDialog(){
+            dialog.classList.add('opened');
+            modelCloser.focus();
+        }
+        function closeDialog() {
+            dialog.classList.remove('opened');
+            modelOpener.focus();
+        }
+
+        modelOpener.addEventListener('click',openDialog);
+        modelCloser.addEventListener('click',closeDialog);
+        document.getElementById('cnl').addEventListener('click',closeDialog);
+
+        document.addEventListener('keydown', function(e) {
+            if (document.activeElement === lastFocusableElement) { // if focused has reached to last focusable element then focus first focusable element after pressing tab
+                firstFocusableElement.focus(); // add focus for the first focusable element
+            e.preventDefault();
+            }
+        });
+
+    </script>
+</body>
+</html>
