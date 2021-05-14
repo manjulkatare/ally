@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Image Source</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <style>
+        h2.section {
+            margin: 50px 0px 10px 0px;
+        }
+        dl.visuallyHidden {
+            height : 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+            border: 0;
+        }
+    </style>
+<header class="navbar-inverse" role="banner">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    	<a class="navbar-brand" aria-label="Branding Logo" href="#">Logo</a>
+    </div>
+  </div>
+</header>
+<div class="container" role="main">
+    <h1>How to use image</h1>
+    <h2 class="section">Do NOT do it this way</h2>
+    <p>It is going to read the file name if there is no ALT</p>
+    <a target="_blank" href="https://www.servicenow.com"><img src="https://www.servicenow.com/content/dam/now-www/en-us/images/global-nav/logo/servicenow-header-logo.svg" height="50px"></a>
+
+    <h2 class="section">Do NOT do it this way</h2>
+    <p>ALT itself should be description enough</p>
+    <a target="_blank" href="https://www.servicenow.com"><img alt="ServiceNow" src="https://www.servicenow.com/content/dam/now-www/en-us/images/global-nav/logo/servicenow-header-logo.svg" height="50px"></a>
+
+    <h2 class="section">Do it this way</h2>
+    <p>May be something like this:</p>
+    <a target="_blank" href="https://www.servicenow.com"><img alt="ServiceNow Company logo" src="https://www.servicenow.com/content/dam/now-www/en-us/images/global-nav/logo/servicenow-header-logo.svg" height="50px"></a>
+
+    <h2 class="section">Do it this way</h2>
+    <p>May be something like this, lil more descriptive:</p>
+    <a target="_blank" href="https://www.servicenow.com"><img aria-details="companyInfo" alt="" src="https://www.servicenow.com/content/dam/now-www/en-us/images/global-nav/logo/servicenow-header-logo.svg" height="50px">
+        <dl id="companyInfo" class="visuallyHidden">
+            <dt>Icon for</dt>
+            <dt>ServiceNow</dt>
+            <dt>Company offers Cloud computing platform</dt>
+            <dt>helps to automate business process</dt>
+        </dl>
+    </a>
+</div>					
+</body>
+</html>

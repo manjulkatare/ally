@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Color Contrast Check</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <style>
+        h2.section {
+            margin: 50px 0px 10px 0px;
+        }
+        div.box {
+            height : 100px;
+            width: 300px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            background: #FFFFFF;
+            color: #A3A3A3;
+            text-align: center;
+            font-size: 25px;
+            border: 1px solid #A3A3A3;
+        }
+        div.improvedContrast {
+            color: #555555;
+        }
+    </style>
+<header class="navbar-inverse" role="banner">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    	<a class="navbar-brand" aria-label="Branding Logo" href="#">Logo</a>
+    </div>
+  </div>
+</header>
+<div class="container" role="main">
+    <h1>Color contrast</h1>
+    <h2 class="section">Do NOT use this color contrast</h2>
+    <div class="box">This is hard to read</div>
+
+    <h2 class="section">Use this color contrast instead</h2>
+    <div class="box improvedContrast">This is easy to read</div>
+    <p><a href="https://webaim.org/resources/contrastchecker/?fcolor=555555&bcolor=FFFFFF">Here is a link to quick link for contrast check.</a></p>		
+
+</div>
+</body>
+</html>
