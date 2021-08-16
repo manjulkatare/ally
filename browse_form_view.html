@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Browse / Form View</h2>
+
+<p>Since screen readers use many of the keys on the keyboard for quick navigation, filling in a form or interacting with a widget presents a dilemma. For example, when pressing the "H" key, how does a screen reader know if you want to navigate to the next heading or enter the letter into a textbox?</p>
+<p>NVDA takes care of this by switching between two "modes." "Browse mode" is the default mode for reading and navigating the page—the mode where the "H" key takes you to the next heading. "Focus mode" passes almost all keystrokes on to the browser—the mode where the "H" key puts the letter H in a text box.</p>
+<p>NVDA will toggle between these modes automatically (assuming you are using the Tab key to navigate) based on the type of thing that has keyboard focus. A high-pitched beep announces the change to focus mode. This occurs when you navigate to text boxes or other inputs or widgets that require keyboard interactions. A lower-pitched beep indicates a change back to browse mode.</p>
+
+<p>Example:</p>
+<p><i>Press Insert + Space to toggle between browse and focus modes manually.</i></p>
+<form action="">
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" value="John"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" value="Doe"><br><br>
+  <input type="submit" value="Submit">
+</form> 
+<p>Some Form footer text to try reading.</p>
+</body>
+</html>
