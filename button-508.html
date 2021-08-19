@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<style>
+button {font-size: 15px; border:0; padding : 5px 10px; margin-left: 10px;}
+button.pendingDispatch {background: #DDA8B6; color: #141B1C}
+button.wip {background: #D2E7E3; color: #161B1C}
+button.breached {background: #C83C36; color: #ffffff}
+button.draft {background: #F5E09B; color: #161B1C}
+button.assigned {background: #E9E1F1; color: #161B1C}
+button.complete {background: #F3D9D2; color: #161B1C}
+button.incomplete {background: #F3D9D2; color: #161B1C}
+button.cancelled {background: #FBD0B3; color: #161B1C}
+button.accepted {background: #D7E7F0; color: #161B1C}
+button.workspacenav {background: #1E856D; color: #ffffff}
+div.card {width: 300px; background: #DDEDE9; padding: 10px;}
+div.card p.cardtext { color: #637274; font-size: 12px;}
+</style>
+<h1>The button Element</h1>
+<button type="button" class="wip">In Progress</button>
+<button type="button" class="pendingDispatch">Pending Dispatch</button>
+<button type="button" class="breached">SLA Breached</button>
+<button type="button" class="draft">Draft</button>
+<button type="button" class="assigned">Assigned</button>
+<button type="button" class="complete">Complete</button>
+<button type="button" class="incomplete">Incomplete</button>
+<button type="button" class="cancelled">cancelled</button>
+<button type="button" class="accepted">Accepted</button>
+<button type="button" class="workspacenav">Dispatcher Workspace</button>
+<h1>The Text Color</h1>
+
+<div class="card">
+<p class="cardtext">Distance to Task</p>
+<p class="cardtext">Matching Skills</p>
+<p class="cardtext">Agent Status</p>
+</div>
+</body>
+</html>
